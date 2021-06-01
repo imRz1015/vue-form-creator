@@ -1,8 +1,0 @@
-.idea
-src/assets
-public
-dist
-node_modules
-.cz-config.js
-.prettierrc.js
-
