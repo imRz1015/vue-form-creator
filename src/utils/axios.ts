@@ -9,19 +9,19 @@ const axios = Axios.create({
 })
 
 axios.interceptors.request.use(
-  (response: any) => {
+  (response) => {
     return response
   },
-  (error: any) => {
+  (error) => {
     return Promise.reject(error)
   }
 )
 
 axios.interceptors.response.use(
-  (response: any) => {
+  (response) => {
     return response
   },
-  (error: any) => {
+  (error) => {
     if (error.response && error.response.data) {
       const code = error.response.status
       const msg = error.response.data.message
