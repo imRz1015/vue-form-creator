@@ -11,6 +11,10 @@
     "lib": [
       "esnext",
       "dom"
+    ],
+    "types": [
+      "vite/client",
+      "jest"
     ]
   },
   "include": [

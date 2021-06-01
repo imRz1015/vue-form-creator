@@ -5,7 +5,8 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test": "jest"
   },
   "lint-staged": {
     "*.{vue,js,ts}": "eslint --fix"
@@ -19,6 +20,7 @@
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
+    "@types/jest": "^26.0.23",
     "@types/node": "^15.6.1",
     "@typescript-eslint/eslint-plugin": "^4.25.0",
     "@typescript-eslint/parser": "^4.25.0",
@@ -32,6 +34,7 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jest": "^24.3.6",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-vue": "^7.10.0",
     "husky": "^6.0.0",
