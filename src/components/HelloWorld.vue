@@ -40,6 +40,7 @@ export default defineComponent({
   },
   setup: () => {
     const count = ref(0)
+    console.log('Test github actions')
     return { count }
   }
 })
