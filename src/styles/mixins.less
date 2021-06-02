@@ -1,0 +1,10 @@
+.flex(@justify:flex-start,@align:center,@direction:row) {
+  display: flex;
+  justify-content: @justify;
+  align-items: @align;
+  flex-direction: @direction;
+}
+
+.linearGradients(@startColor:#0e66d8,@endColor:#2a8aff,@position:bottom) {
+  background-image: linear-gradient(to @position, @startColor, @endColor);
+}
