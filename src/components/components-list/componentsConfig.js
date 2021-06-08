@@ -3,7 +3,7 @@ export const basicComponents = [
   {
     name: '输入框',
     type: 'input',
-    icon: 'icon-input',
+    icon: 'fc-input',
     options: {
       width: '100%',
       defaultValue: '',
@@ -17,7 +17,7 @@ export const basicComponents = [
   {
     name: '文本域',
     type: 'textarea',
-    icon: 'icon-diy-com-textarea',
+    icon: 'fc-textarea',
     options: {
       width: '100%',
       defaultValue: '',
@@ -30,7 +30,7 @@ export const basicComponents = [
   {
     name: '数字输入框',
     type: 'number',
-    icon: 'icon-number',
+    icon: 'fc-numberInput',
     options: {
       width: '',
       required: false,
@@ -45,7 +45,7 @@ export const basicComponents = [
   {
     name: '单选框组',
     type: 'radio',
-    icon: 'icon-radio-active',
+    icon: 'fc-radio',
     options: {
       inline: false,
       defaultValue: '',
@@ -79,7 +79,7 @@ export const basicComponents = [
   {
     name: '多选框组',
     type: 'checkbox',
-    icon: 'icon-check-box',
+    icon: 'fc-checkbox',
     options: {
       inline: false,
       defaultValue: [],
@@ -110,7 +110,7 @@ export const basicComponents = [
   {
     name: '时间选择框',
     type: 'time',
-    icon: 'icon-time',
+    icon: 'fc-timePicker',
     options: {
       defaultValue: '21:19:56',
       readonly: false,
@@ -130,7 +130,7 @@ export const basicComponents = [
   {
     name: '日期选择框',
     type: 'date',
-    icon: 'icon-date',
+    icon: 'fc-datePicker',
     options: {
       defaultValue: '',
       readonly: false,
@@ -150,7 +150,7 @@ export const basicComponents = [
   {
     name: '评分',
     type: 'rate',
-    icon: 'icon-pingfen1',
+    icon: 'fc-rate',
     options: {
       defaultValue: null,
       max: 5,
@@ -173,7 +173,7 @@ export const basicComponents = [
   {
     name: '选择器',
     type: 'select',
-    icon: 'icon-select',
+    icon: 'fc-select',
     options: {
       defaultValue: '',
       multiple: false,
@@ -207,7 +207,7 @@ export const basicComponents = [
   {
     name: '开关',
     type: 'switch',
-    icon: 'icon-switch',
+    icon: 'fc-switch',
     options: {
       defaultValue: false,
       required: false,
@@ -217,7 +217,7 @@ export const basicComponents = [
   {
     name: '滑动输入条',
     type: 'slider',
-    icon: 'icon-slider',
+    icon: 'fc-slider',
     options: {
       defaultValue: 0,
       disabled: false,
@@ -233,7 +233,7 @@ export const basicComponents = [
   {
     name: '描述文字',
     type: 'text',
-    icon: 'icon-wenzishezhi-',
+    icon: 'fc-discribtion',
     options: {
       defaultValue: 'This is a text',
       customClass: ''
