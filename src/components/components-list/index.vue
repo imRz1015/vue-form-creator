@@ -3,7 +3,7 @@
   <div class="components-list basic">
     <a-button v-for="(component, index) in basicComponents" :key="index" size="large" style="text-align: left">
       <template #icon>
-        <EditOutlined />
+        <IconFont :type="component.icon" />
       </template>
       {{ component.name }}
     </a-button>
@@ -12,12 +12,15 @@
 
 <script>
 import { defineComponent } from 'vue'
-import { EditOutlined } from '@ant-design/icons-vue'
+import { createFromIconfontCN } from '@ant-design/icons-vue'
 import { basicComponents } from './componentsConfig'
 
+const IconFont = createFromIconfontCN({
+  scriptUrl: '//at.alicdn.com/t/font_2600762_6t1ywbddyed.js'
+})
 export default defineComponent({
   name: 'components-list',
-  components: { EditOutlined },
+  components: { IconFont },
   setup() {
     return {
       basicComponents
