@@ -13,7 +13,7 @@
   </a-layout>
 </template>
 
-<script>
+<script lang="ts">
 import AppHeader from '@/components/app-header/index.vue'
 import ComponentsList from '@/components/components-list/index.vue'
 

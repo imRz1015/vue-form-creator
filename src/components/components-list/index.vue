@@ -1,5 +1,10 @@
 <template>
-  <a-page-header :backIcon="false" style="border-bottom: 1px solid rgb(235, 237, 240)" title="Basic Components" sub-title="拖动组件至内容区域进行快速创建" />
+  <a-page-header
+    :backIcon="false"
+    style="border-bottom: 1px solid rgb(235, 237, 240)"
+    title="Basic Components"
+    sub-title="拖动组件至内容区域进行快速创建"
+  />
   <div class="components-list basic">
     <a-button v-for="(component, index) in basicComponents" :key="index" size="large" style="text-align: left">
       <template #icon>
@@ -9,8 +14,8 @@
     </a-button>
   </div>
 </template>
-
-<script>
+<script lang="ts">
+// import draggable from 'vuedraggable'
 import { defineComponent } from 'vue'
 import { createFromIconfontCN } from '@ant-design/icons-vue'
 import { basicComponents } from './componentsConfig'
