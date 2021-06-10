@@ -7,7 +7,9 @@
       <a-layout-sider class="left-side" width="320">
         <ComponentsList></ComponentsList>
       </a-layout-sider>
-      <a-layout-content></a-layout-content>
+      <a-layout-content>
+        <ComponentsPreview></ComponentsPreview>
+      </a-layout-content>
       <a-layout-sider class="right-side" width="300"></a-layout-sider>
     </a-layout>
   </a-layout>
@@ -16,10 +18,11 @@
 <script lang="ts">
 import AppHeader from '@/components/app-header/index.vue'
 import ComponentsList from '@/components/components-list/index.vue'
+import ComponentsPreview from '@/components/components-preview/index.vue'
 
 export default {
   name: 'layout',
-  components: { AppHeader, ComponentsList }
+  components: { AppHeader, ComponentsList, ComponentsPreview }
 }
 </script>
 

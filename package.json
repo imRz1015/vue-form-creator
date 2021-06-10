@@ -15,9 +15,9 @@
     "@ant-design/icons-vue": "^6.0.1",
     "ant-design-vue": "^2.1.6",
     "axios": "^0.21.1",
+    "sortablejs": "^1.13.0",
     "vue": "^3.0.5",
     "vue-router": "4",
-    "vuedraggable": "^2.24.3",
     "vuex": "^4.0.1"
   },
   "devDependencies": {
@@ -25,6 +25,7 @@
     "@commitlint/config-conventional": "^12.1.4",
     "@types/jest": "^26.0.23",
     "@types/node": "^15.6.1",
+    "@types/sortablejs": "^1.10.6",
     "@typescript-eslint/eslint-plugin": "^4.25.0",
     "@typescript-eslint/parser": "^4.25.0",
     "@vitejs/plugin-vue": "^1.2.2",
