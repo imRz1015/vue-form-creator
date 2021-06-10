@@ -8,6 +8,7 @@ import { defineComponent, onMounted, ref } from 'vue'
 
 export default defineComponent({
   setup() {
+    // 初始化表单预览区域
     const componentsPreview = ref(null)
     const initSortable = () => {
       const sortable = new Sortable(componentsPreview.value, {
