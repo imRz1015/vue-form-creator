@@ -5,7 +5,7 @@
     title="Basic Components"
     sub-title="拖动组件至内容区域进行快速创建"
   />
-  <div class="components-list basic">
+  <div class="components-list basic" ref="componentsListElement">
     <a-button v-for="(component, index) in basicComponents" :key="index" size="large" style="text-align: left">
       <template #icon>
         <IconFont :type="component.icon" />
@@ -15,8 +15,8 @@
   </div>
 </template>
 <script lang="ts">
-// import draggable from 'vuedraggable'
-import { defineComponent } from 'vue'
+import Sortable from 'sortablejs'
+import { ref, defineComponent, onMounted } from 'vue'
 import { createFromIconfontCN } from '@ant-design/icons-vue'
 import { basicComponents } from './componentsConfig'
 
@@ -27,8 +27,28 @@ export default defineComponent({
   name: 'components-list',
   components: { IconFont },
   setup() {
+    // 初始化sortable
+    let sortable = null
+    const componentsListElement = ref(null)
+    const initSortable = () => {
+      sortable = new Sortable(componentsListElement.value, {
+        group: {
+          name: 'componentsList',
+          pull: 'clone'
+        },
+        animation: 150,
+        sort: false
+      })
+      console.log(componentsListElement.value)
+      console.log(sortable)
+    }
+
+    onMounted(() => {
+      initSortable()
+    })
     return {
-      basicComponents
+      basicComponents,
+      componentsListElement
     }
   }
 })
