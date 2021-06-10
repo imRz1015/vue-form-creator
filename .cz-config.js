@@ -21,7 +21,6 @@ module.exports = {
   // 交互提示信息
   messages: {
     type: "确保本次提交遵循 Angular 规范！\n选择你要提交的类型：",
-    scope: "\n选择一个 scope（可选）：",
     // 选择 scope: custom 时会出下面的提示
     customScope: "请输入自定义的 scope：",
     subject: "填写简短精炼的变更描述：\n",
