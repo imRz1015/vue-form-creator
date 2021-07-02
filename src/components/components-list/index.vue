@@ -6,7 +6,14 @@
     sub-title="拖动组件至内容区域进行快速创建"
   />
   <div class="components-list basic" ref="componentsListElement">
-    <a-button v-for="(component, index) in basicComponents" :key="index" size="large" style="text-align: left">
+    <a-button
+      v-for="(component, index) in basicComponents"
+      :key="index"
+      size="large"
+      style="text-align: left"
+      component-belong="basicComponents"
+      :component-type="component.type"
+    >
       <template #icon>
         <IconFont :type="component.icon" />
       </template>
@@ -34,6 +41,7 @@ export default defineComponent({
       sortable = new Sortable(componentsListElement.value, {
         group: {
           name: 'componentsList',
+          put: false,
           pull: 'clone'
         },
         animation: 150,
