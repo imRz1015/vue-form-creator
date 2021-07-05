@@ -5,25 +5,25 @@
     title="Basic Components"
     sub-title="拖动组件至内容区域进行快速创建"
   />
-  <div class="components-list basic" ref="componentsListElement">
-    <a-button
-      v-for="(component, index) in basicComponents"
-      :key="index"
-      size="large"
-      style="text-align: left"
-      component-belong="basicComponents"
-      :component-type="component.type"
-    >
-      <template #icon>
-        <IconFont :type="component.icon" />
-      </template>
-      {{ component.name }}
-    </a-button>
-  </div>
+  <draggable
+    class="components-list basic"
+    v-model="basicComponents"
+    item-key="type"
+    v-bind="{ group: { name: 'people', pull: 'clone', put: false }, sort: false, ghostClass: 'ghost' }"
+  >
+    <template #item="{ element }">
+      <a-button size="large" style="text-align: left" component-belong="basicComponents" :component-type="element.type">
+        <template #icon>
+          <IconFont :type="element.icon" />
+        </template>
+        {{ element.name }}
+      </a-button>
+    </template>
+  </draggable>
 </template>
 <script lang="ts">
-import Sortable from 'sortablejs'
-import { ref, defineComponent, onMounted } from 'vue'
+import draggable from 'vuedraggable/src/vuedraggable'
+import { defineComponent } from 'vue'
 import { createFromIconfontCN } from '@ant-design/icons-vue'
 import { basicComponents } from './componentsConfig'
 
@@ -32,31 +32,10 @@ const IconFont = createFromIconfontCN({
 })
 export default defineComponent({
   name: 'components-list',
-  components: { IconFont },
+  components: { IconFont, draggable },
   setup() {
-    // 初始化sortable
-    let sortable = null
-    const componentsListElement = ref(null)
-    const initSortable = () => {
-      sortable = new Sortable(componentsListElement.value, {
-        group: {
-          name: 'componentsList',
-          put: false,
-          pull: 'clone'
-        },
-        animation: 150,
-        sort: false
-      })
-      console.log(componentsListElement.value)
-      console.log(sortable)
-    }
-
-    onMounted(() => {
-      initSortable()
-    })
     return {
-      basicComponents,
-      componentsListElement
+      basicComponents
     }
   }
 })
