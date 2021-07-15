@@ -2,7 +2,7 @@
 export const basicComponents = [
   {
     name: '输入框',
-    type: 'input',
+    type: 'a-input',
     icon: 'fc-input',
     options: {
       width: '100%',
