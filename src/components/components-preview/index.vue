@@ -16,25 +16,25 @@
 
 <script lang="ts">
 import draggable from 'vuedraggable/src/vuedraggable'
-import { defineComponent, ref, reactive } from 'vue'
+import { defineComponent, reactive } from 'vue'
 import { getElementAttr } from '../../utils/tools'
 import { basicComponents } from '../components-list/componentsConfig'
 import { IComponents } from '../../types/components'
 import ComponentsItem from '../components-item/index.vue'
+
+const getComponentItemConfig = (belong: string, type: string): IComponents | null => {
+  if (belong === 'basicComponents') {
+    return basicComponents.find((itemConfig) => itemConfig.type === type) || null
+  }
+  return null
+}
 
 export default defineComponent({
   components: { draggable, ComponentsItem },
   setup() {
     // 初始化表单预览区域
     const formState = reactive({})
-    const componentsPreview = ref(null)
     const componentsList: IComponents[] = reactive([])
-    const getComponentItemConfig = (belong: string, type: string): IComponents | null | undefined => {
-      if (belong === 'basicComponents') {
-        return basicComponents.find((itemConfig) => itemConfig.type === type)
-      }
-      return null
-    }
     const handleAddComponent = (evt: any) => {
       console.log(`@sortablejs:被放入预览区域的事件体`, evt)
       // 获取组件归属：基本组件 | 布局组件 | 高级组件
@@ -43,15 +43,15 @@ export default defineComponent({
       const componentType = getElementAttr(evt.item, 'component-type')
       // 找到的组件默认配置
       const componentConfig = getComponentItemConfig(componentBelong, componentType)
-      console.log(`@该组件的默认配置:`, componentConfig)
-      console.log(componentsList)
-      componentsList.push({ name: 'components' })
+      if (componentConfig) {
+        console.log(`@该组件的默认配置:`, componentConfig)
+        componentsList.push(componentConfig)
+      }
     }
 
     return {
       formState,
       handleAddComponent,
-      componentsPreview,
       componentsList
     }
   }
