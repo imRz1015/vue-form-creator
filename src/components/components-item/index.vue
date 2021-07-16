@@ -18,10 +18,20 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 
+interface IFormItem {
+  name: string
+  type: string
+  options: {
+    options?: object
+    defaultValue?: string
+  }
+}
+
 export default defineComponent({
   name: 'components-item',
   setup(_props, { attrs }) {
-    const config = attrs
+    const defaultAttrs = { name: '', type: '', options: {}, ...attrs }
+    const config: IFormItem = defaultAttrs
     return {
       config
     }
