@@ -86,13 +86,16 @@ export const basicComponents = [
       showLabel: false,
       options: [
         {
-          value: 'Option 1'
+          value: 'Option 1',
+          label: 'Option 1'
         },
         {
-          value: 'Option 2'
+          value: 'Option 2',
+          label: 'Option 2'
         },
         {
-          value: 'Option 3'
+          value: 'Option 3',
+          label: 'Option 3'
         }
       ],
       required: false,
@@ -109,7 +112,7 @@ export const basicComponents = [
   },
   {
     name: '时间选择框',
-    type: 'time',
+    type: 'timePicker',
     icon: 'fc-timePicker',
     options: {
       defaultValue: '21:19:56',
@@ -129,7 +132,7 @@ export const basicComponents = [
   },
   {
     name: '日期选择框',
-    type: 'date',
+    type: 'datePicker',
     icon: 'fc-datePicker',
     options: {
       defaultValue: '',
@@ -156,17 +159,6 @@ export const basicComponents = [
       max: 5,
       disabled: false,
       allowHalf: false,
-      required: false
-    }
-  },
-  {
-    name: '取色器',
-    type: 'color',
-    icon: 'icon-color',
-    options: {
-      defaultValue: '',
-      disabled: false,
-      showAlpha: false,
       required: false
     }
   },

@@ -5,10 +5,10 @@
     </a-layout-header>
     <a-layout class="content">
       <a-layout-sider class="left-side" width="320">
-        <ComponentsList></ComponentsList>
+        <ComponentsList />
       </a-layout-sider>
       <a-layout-content>
-        <ComponentsPreview></ComponentsPreview>
+        <ComponentsPreview />
       </a-layout-content>
       <a-layout-sider class="right-side" width="300"></a-layout-sider>
     </a-layout>
