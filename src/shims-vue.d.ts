@@ -5,4 +5,4 @@ declare module '*.vue' {
   export default component
 }
 
-declare module 'sortablejs'
+declare module 'vuedraggable/src/vuedraggable'

@@ -2,16 +2,16 @@
 export const basicComponents = [
   {
     name: '输入框',
-    type: 'a-input',
+    type: 'input',
     icon: 'fc-input',
     options: {
-      width: '100%',
       defaultValue: '',
       required: false,
       dataType: 'string',
       pattern: '',
-      placeholder: '',
-      disabled: false
+      placeholder: '请输入',
+      disabled: false,
+      allowClear: true
     }
   },
   {

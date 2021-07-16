@@ -1,6 +1,6 @@
 <template>
   <a-form-item class="components-item" :label="config.name">
-    <component :is="config.type"></component>
+    <a-input v-if="config.type === 'input'" v-bind="config.options"></a-input>
   </a-form-item>
 </template>
 

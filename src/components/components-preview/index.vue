@@ -17,6 +17,7 @@
 <script lang="ts">
 import draggable from 'vuedraggable/src/vuedraggable'
 import { defineComponent, reactive } from 'vue'
+import { nanoid } from 'nanoid'
 import { getElementAttr } from '../../utils/tools'
 import { basicComponents } from '../components-list/componentsConfig'
 import { IComponents } from '../../types/components'
@@ -45,7 +46,8 @@ export default defineComponent({
       const componentConfig = getComponentItemConfig(componentBelong, componentType)
       if (componentConfig) {
         console.log(`@该组件的默认配置:`, componentConfig)
-        componentsList.push(componentConfig)
+        const key = nanoid()
+        componentsList.push({ id: key, ...componentConfig })
       }
     }
 
