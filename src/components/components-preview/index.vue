@@ -1,5 +1,5 @@
 <template>
-  <a-form class="form-container" :form="formState">
+  <a-form class="form-container" :labelCol="{ span: 2 }" :wrapperCol="{ span: 20 }" :form="formState">
     <draggable
       class="components-preview"
       v-model="componentsList"
