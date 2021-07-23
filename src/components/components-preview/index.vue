@@ -4,7 +4,7 @@
       class="components-preview"
       v-model="componentsList"
       item-key="token"
-      v-bind="{ group: 'people', ghostClass: 'ghost', animation: 200, handle: '.drag-widget' }"
+      v-bind="{ group: 'componentsGroup', ghostClass: 'ghost', animation: 200, handle: '.drag-widget' }"
       @add="handleAddComponent"
     >
       <template #item="{ element }">

@@ -9,7 +9,7 @@
     class="components-list basic"
     v-model="basicComponents"
     item-key="type"
-    v-bind="{ group: { name: 'people', pull: 'clone', put: false }, sort: false, ghostClass: 'ghost' }"
+    v-bind="{ group: { name: 'componentsGroup', pull: 'clone', put: false }, sort: false, ghostClass: 'ghost' }"
   >
     <template #item="{ element }">
       <a-button size="large" style="text-align: left" component-belong="basicComponents" :component-type="element.type">
