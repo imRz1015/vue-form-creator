@@ -10,20 +10,18 @@
       <a-layout-content>
         <ComponentsPreview />
       </a-layout-content>
-      <a-layout-sider class="right-side" width="300"></a-layout-sider>
+      <a-layout-sider class="right-side" width="300">
+        <componentsConfig />
+      </a-layout-sider>
     </a-layout>
   </a-layout>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import AppHeader from '@/components/app-header/index.vue'
 import ComponentsList from '@/components/components-list/index.vue'
 import ComponentsPreview from '@/components/components-preview/index.vue'
-
-export default {
-  name: 'layout',
-  components: { AppHeader, ComponentsList, ComponentsPreview }
-}
+import ComponentsConfig from '@/components/components-config/index.vue'
 </script>
 
 <style lang="less" scoped>
