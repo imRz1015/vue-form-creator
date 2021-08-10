@@ -17,10 +17,5 @@ export default createStore({
     increment(context) {
       context.commit('increment')
     }
-  },
-  getters: {
-    double(state: typeof defaultState) {
-      return 2 * state.count
-    }
   }
 })

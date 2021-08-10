@@ -28,7 +28,7 @@ interface IFormItem {
 }
 
 export default defineComponent({
-  name: 'components-item',
+  name: 'ComponentsItem',
   setup(_props, { attrs }) {
     const defaultAttrs = { name: '', type: '', options: {}, ...attrs }
     const config: IFormItem = defaultAttrs

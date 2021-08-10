@@ -1,8 +1,8 @@
 <template>
-  <a-form class="form-container" :labelCol="{ span: 2 }" :wrapperCol="{ span: 20 }" :form="formState">
+  <a-form class="form-container" :label-col="{ span: 2 }" :wrapper-col="{ span: 20 }" :form="formState" v-bind="previewConfig.formConfig">
     <draggable
-      class="components-preview"
       v-model="componentsList"
+      class="components-preview"
       item-key="token"
       v-bind="{ group: 'componentsGroup', ghostClass: 'ghost', animation: 200, handle: '.drag-widget' }"
       @add="handleAddComponent"
@@ -16,7 +16,7 @@
 
 <script lang="ts">
 import draggable from 'vuedraggable/src/vuedraggable'
-import { defineComponent, reactive } from 'vue'
+import { defineComponent, reactive, toRefs } from 'vue'
 import { nanoid } from 'nanoid'
 import { getElementAttr } from '../../utils/tools'
 import { basicComponents } from '../components-list/componentsConfig'
@@ -32,7 +32,18 @@ const getComponentItemConfig = (belong: string, type: string): IComponents | nul
 
 export default defineComponent({
   components: { draggable, ComponentsItem },
-  setup() {
+  props: {
+    previewConfig: {
+      type: Object,
+      default: () => {
+        return {
+          formConfig: {},
+          formItemConfig: {}
+        }
+      }
+    }
+  },
+  setup(props) {
     // 初始化表单预览区域
     const formState = reactive({})
     const componentsList: IComponents[] = reactive([])
@@ -52,6 +63,7 @@ export default defineComponent({
     }
 
     return {
+      ...toRefs(props),
       formState,
       handleAddComponent,
       componentsList

@@ -8,20 +8,28 @@
         <ComponentsList />
       </a-layout-sider>
       <a-layout-content>
-        <ComponentsPreview />
+        <ComponentsPreview :preview-config="previewConfig" />
       </a-layout-content>
       <a-layout-sider class="right-side" width="300">
-        <componentsConfig />
+        <ComponentsConfig @form-config-change="handleFormConfigChange" />
       </a-layout-sider>
     </a-layout>
   </a-layout>
 </template>
 
-<script lang="ts" setup>
+<script setup lang="ts">
+import { reactive } from 'vue'
 import AppHeader from '@/components/app-header/index.vue'
 import ComponentsList from '@/components/components-list/index.vue'
 import ComponentsPreview from '@/components/components-preview/index.vue'
 import ComponentsConfig from '@/components/components-config/index.vue'
+const previewConfig = reactive({
+  formConfig: {},
+  formItemConfig: {}
+})
+const handleFormConfigChange = (e: any) => {
+  previewConfig.formConfig = e
+}
 </script>
 
 <style lang="less" scoped>
