@@ -2,16 +2,8 @@
   <Layout></Layout>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts">
 import Layout from './views/layout.vue'
-
-export default defineComponent({
-  name: 'App',
-  components: {
-    Layout
-  }
-})
 </script>
 
 <style lang="less">
