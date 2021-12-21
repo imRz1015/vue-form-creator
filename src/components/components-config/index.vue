@@ -17,7 +17,7 @@ import { defineProps, ref, reactive, defineEmits } from 'vue'
 import FormConfig from './components/form-config.vue'
 const emit = defineEmits(['formConfigChange'])
 const activeTab = ref('1')
-const handleFormConfigChange = (e) => {
+const handleFormConfigChange = (e: any) => {
   emit('formConfigChange', e)
 }
 </script>
