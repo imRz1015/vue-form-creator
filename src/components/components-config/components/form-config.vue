@@ -1,3 +1,8 @@
+<!--
+ * @Author: 汤启民
+ * @Date: 2021-12-21 15:12:23
+ * @Description:
+-->
 <template>
   <a-form :model="formState" layout="vertical" style="padding: 0 12px">
     <a-form-item label="表单对齐方式">
@@ -22,7 +27,7 @@
   </a-form>
 </template>
 <script setup lang="ts">
-import { reactive, defineEmit } from 'vue'
+import { reactive, defineEmits } from 'vue'
 
 interface IFormState {
   layout: 'horizontal' | 'vertical'
@@ -30,7 +35,7 @@ interface IFormState {
   size: 'large' | 'middle' | 'small'
 }
 
-const emit = defineEmit(['formConfigChange'])
+const emit = defineEmits(['formConfigChange'])
 
 const formState: IFormState = reactive({
   layout: 'horizontal',

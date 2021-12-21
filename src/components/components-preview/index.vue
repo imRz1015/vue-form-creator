@@ -1,3 +1,8 @@
+<!--
+ * @Author: 汤启民
+ * @Date: 2021-12-21 15:10:29
+ * @Description:
+-->
 <template>
   <a-form class="form-container" :label-col="{ span: 2 }" :wrapper-col="{ span: 20 }" :form="formState" v-bind="previewConfig.formConfig">
     <draggable
@@ -15,7 +20,7 @@
 </template>
 
 <script lang="ts">
-import draggable from 'vuedraggable/src/vuedraggable'
+import draggable from 'vuedraggable'
 import { defineComponent, reactive, toRefs } from 'vue'
 import { nanoid } from 'nanoid'
 import { getElementAttr } from '../../utils/tools'
